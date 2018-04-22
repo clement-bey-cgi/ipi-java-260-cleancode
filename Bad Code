@@ -1,0 +1,157 @@
+/** TROP DE PARAMETRE*/
+----------------------------------------------------------------------------------------------------------------
+		// Methode a corriger
+		public Client doThingWithThisClient(Client client, Adresse adresse, Argent argent, boolean isAmoureux, PlatPrefere platPrefere, List<Ami> amis) {
+			// FAIRE PLEIN DE TRUCS AVEC TOUS SES ARGUMENTS
+		}
+
+		public void autreMethodeAppelantCetteMethode(){
+			// AVANT 
+			doThingWithThisClient(client, adresse, argent, isAmoureux, platPrefere,  amis)
+			
+			// APRES : découpe la méthode en regroupant les paramètre par PROBLEMATIQUE
+			defineAndTreatCordonneesAdministratives(client, adresse, argent);
+			defineAndTreatRelationships(client, isAmoureux, amis);
+			defineAndTreatFoodTaste(platPrefere, client)
+		}
+----------------------------------------------------------------------------------------------------------------
+	
+	
+/** NOM NON SIGNIFICATIF*/
+----------------------------------------------------------------------------------------------------------------
+	public void nomNonSignificatif() {
+		// A REMPLACER PAR game ou bowlingGame
+		BowlingGame m = new BowlingGame();
+		
+		// A REMPLACER PAR gameScore ou Score
+		int sapristiSaucisse = m.getScore();
+	}
+----------------------------------------------------------------------------------------------------------------
+
+
+/** NOMS COMPATIBLES AVEC UNE RECHERCHE + NON RESPECT DES NORMES DE NOMMAGES */
+----------------------------------------------------------------------------------------------------------------
+		// NON
+		BowlingGame G_A_M_E;
+		
+		// OUI
+		BowlingGame game;
+----------------------------------------------------------------------------------------------------------------
+	
+	
+/**  METHODE QUI A PLUSIEURS UTILITES + COMMENTAIRES SUPREFLUX */
+----------------------------------------------------------------------------------------------------------------
+
+		// METHODE DE TYPE VOID QUI AFFECTE DES DONNEES EN BASE
+		codeCaca.callWirdMethod(s);
+		
+		// ET ON MET EN FORME LA STRING 
+		s.replace("s", "u");
+		
+		// AVANT DE LA RENVOYER
+		return s.trim();
+		
+		// ICI ON SUPPRIME LES COMMENTAIRES SUPREFLUX (TOUS LE CODE PARLE POUR LUI)
+		// ET ON REDECOUPE LA METHODE EN DEUX METHODE --> 1 
+----------------------------------------------------------------------------------------------------------------
+
+/** AUCUNE VERIFICATION POUR LE CAS NULL */
+----------------------------------------------------------------------------------------------------------------
+	
+	public void exampleMethod(){
+		// AVANT 
+		Classe variable = someRepository.findOne(someId);
+		variable.setMachin(x);
+		
+		// APRES : on verifie maintenant au moins le null
+		Classe variable = someRepository.findOne(someId);
+		if () {
+			variable.setMachin(x);
+		}
+		else {
+			throw new MyError("Oulalala");
+		}
+	}
+----------------------------------------------------------------------------------------------------------------
+	
+/** DESINFORMATION */
+----------------------------------------------------------------------------------------------------------------
+//AVANT
+	// Je m'occupe de valider l'ensemble des données en bases 
+	x.setMachin();
+	 
+// APRES
+	x.setMachin();
+----------------------------------------------------------------------------------------------------------------
+	
+/** NOMMAGE UN MOT PAR CONCEPT*/
+----------------------------------------------------------------------------------------------------------------
+	// NON, les choisir l'un ou l'autre 
+	BowlingGame jeuDeBoule = repo.findOne(id);
+	BowlingGame partieDeBowling = new BowlingGame();
+	
+	// OUI
+	BowlingGame partieDeBowlingPersistee = repo.findOne(id);
+	BowlingGame partieDeBowling = new BowlingGame();
+----------------------------------------------------------------------------------------------------------------
+
+/** PAS DE CONSTANTES OU D ENUMERATION*/
+----------------------------------------------------------------------------------------------------------------
+	// AVANT
+	Balle balle = new Balle("latex");
+	Balle otherBalle = new Balle("papier"); 
+	
+	// APRES : ajout d'une énumération 
+	Balle balle = new Balle(BalleType.LATEX);
+	Balle otherBalle = new Balle(BalleType.PAPIER); 
+----------------------------------------------------------------------------------------------------------------
+
+
+/** PAS DE VERIFICATION DES ENTREES UTILISATEURS */
+----------------------------------------------------------------------------------------------------------------
+	// NON : il manque un controle. Il y aura toujours un petit malin pour entrer "ok"
+	Scanner scanner = new Scanner(system.in);
+	system.out.println("Entrez un nombre décimal !");
+	String number = scanner.nextLine();
+	methodWhoNeedsADecimalNumber(number);
+	
+	// OUI
+	Scanner scanner = new Scanner(system.in);
+	system.out.println("Entrez un nombre décimal !");
+	String number = scanner.nextLine();
+	
+	try  
+	{  
+	double formatedNumber = Double.parseDouble(number);  
+	}  
+	catch(NumberFormatException nfe)  
+	{  
+	throw new MyError("Joues pas au plus malin Billy...");  
+	}  
+	
+	methodWhoNeedsADecimalNumber(number);
+----------------------------------------------------------------------------------------------------------------
+
+
+/** CODE MAL AERE */
+----------------------------------------------------------------------------------------------------------------
+// APRES
+	String string; Integer integer; Boule boule;
+	// Je commente vraiment bien mon code
+	if (machin == truc) {doThing()} else {doOther()}
+	
+// APRES : on espace notre commentaire du reste du code, on prend l'espace qui rend le code agréable à lire
+	String string; 
+	Integer integer; 
+	Boule boule;
+	
+	
+	// Je commente vraiment bien mon code
+	
+	if (machin == truc) {
+		doThing();
+	} 
+	else {
+		doOther();
+	}
+----------------------------------------------------------------------------------------------------------------
